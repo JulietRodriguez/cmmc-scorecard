@@ -38,6 +38,20 @@
 
 ---
 
+## Screenshots
+
+The dark, professional Streamlit dashboard turns a findings file into an at-a-glance compliance posture.
+
+**Scorecard overview** — overall score, per-domain coverage, and the CMMC domain radar chart.
+
+![CMMC scorecard dashboard overview with domain scores and coverage radar](docs/screenshots/scorecard.png)
+
+**Gap analysis & remediation** — failing and not-assessed practices alongside the prioritized remediation board.
+
+![CMMC dashboard gap analysis cards and remediation priority ranking](docs/screenshots/scorecard2.png)
+
+---
+
 ## 🏗️ Architecture
 
 ```mermaid
@@ -136,20 +150,6 @@ Example terminal output:
  ...
  Breakdown = pass / partial / fail / not-assessed
 ```
-
----
-
-## 📸 Screenshots
-
-> Generate these locally with `streamlit run cmmc_scorecard/dashboard.py` and drop the captures in `docs/`.
-
-| Dashboard overview | Radar chart |
-| --- | --- |
-| ![Scorecard dashboard overview](docs/dashboard-overview.png) | ![CMMC domain coverage radar](docs/radar.png) |
-
-| Gap analysis cards | Remediation priorities |
-| --- | --- |
-| ![Gap analysis cards](docs/gaps.png) | ![Remediation priority board](docs/remediation.png) |
 
 ---
 
