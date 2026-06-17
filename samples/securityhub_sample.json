@@ -1,0 +1,104 @@
+{
+  "Findings": [
+    {
+      "Id": "arn:aws:securityhub:us-east-1:123456789012:finding/iam-mfa-01",
+      "Title": "IAM users should have MFA enabled",
+      "Description": "This control checks whether IAM users have MFA enabled.",
+      "Severity": {"Label": "MEDIUM"},
+      "Resources": [{"Id": "arn:aws:iam::123456789012:user/alice", "Type": "AwsIamUser"}],
+      "Compliance": {
+        "Status": "PASSED",
+        "SecurityControlId": "IAM.5",
+        "RelatedRequirements": ["NIST.800-171.r2 3.5.3", "NIST.800-53.r5 IA-2(1)"]
+      },
+      "Remediation": {"Recommendation": {"Text": "Enable MFA for the IAM user."}}
+    },
+    {
+      "Id": "arn:aws:securityhub:us-east-1:123456789012:finding/s3-encrypt-01",
+      "Title": "S3 buckets should have server-side encryption enabled",
+      "Description": "This control checks default encryption on S3 buckets.",
+      "Severity": {"Label": "HIGH"},
+      "Resources": [{"Id": "arn:aws:s3:::cui-archive", "Type": "AwsS3Bucket"}],
+      "Compliance": {
+        "Status": "FAILED",
+        "SecurityControlId": "S3.4",
+        "RelatedRequirements": ["NIST.800-171.r2 3.13.16", "NIST.800-171.r2 3.8.9"]
+      },
+      "Remediation": {"Recommendation": {"Text": "Enable default encryption on the bucket."}}
+    },
+    {
+      "Id": "arn:aws:securityhub:us-east-1:123456789012:finding/cloudtrail-01",
+      "Title": "CloudTrail should be enabled and configured with multi-region",
+      "Description": "Checks for a multi-region CloudTrail.",
+      "Severity": {"Label": "HIGH"},
+      "Resources": [{"Id": "arn:aws:cloudtrail:us-east-1:123456789012:trail/org", "Type": "AwsCloudTrailTrail"}],
+      "Compliance": {
+        "Status": "PASSED",
+        "SecurityControlId": "CloudTrail.1",
+        "RelatedRequirements": ["NIST.800-171.r2 3.3.1", "NIST.800-171.r2 3.3.2"]
+      }
+    },
+    {
+      "Id": "arn:aws:securityhub:us-east-1:123456789012:finding/ec2-sg-01",
+      "Title": "Security groups should not allow unrestricted access to ports",
+      "Description": "Checks for 0.0.0.0/0 ingress on high-risk ports.",
+      "Severity": {"Label": "HIGH"},
+      "Resources": [{"Id": "sg-0a1b2c3d4e5f", "Type": "AwsEc2SecurityGroup"}],
+      "Compliance": {
+        "Status": "FAILED",
+        "SecurityControlId": "EC2.13",
+        "RelatedRequirements": ["NIST.800-171.r2 3.13.1", "NIST.800-171.r2 3.4.7"]
+      },
+      "Remediation": {"Recommendation": {"Text": "Remove unrestricted ingress rules."}}
+    },
+    {
+      "Id": "arn:aws:securityhub:us-east-1:123456789012:finding/inspector-01",
+      "Title": "Amazon Inspector should be enabled",
+      "Description": "Checks vulnerability scanning coverage.",
+      "Severity": {"Label": "MEDIUM"},
+      "Resources": [{"Id": "123456789012", "Type": "AwsAccount"}],
+      "Compliance": {
+        "Status": "PASSED",
+        "SecurityControlId": "Inspector.1",
+        "RelatedRequirements": ["NIST.800-171.r2 3.11.2"]
+      }
+    },
+    {
+      "Id": "arn:aws:securityhub:us-east-1:123456789012:finding/ssm-patch-01",
+      "Title": "EC2 instances managed by Systems Manager should be patch compliant",
+      "Description": "Checks patch compliance status.",
+      "Severity": {"Label": "CRITICAL"},
+      "Resources": [{"Id": "i-0web1prod", "Type": "AwsEc2Instance"}],
+      "Compliance": {
+        "Status": "FAILED",
+        "SecurityControlId": "SSM.2",
+        "RelatedRequirements": ["NIST.800-171.r2 3.14.1", "NIST.800-171.r2 3.11.3"]
+      },
+      "Remediation": {"Recommendation": {"Text": "Apply the latest approved patches."}}
+    },
+    {
+      "Id": "arn:aws:securityhub:us-east-1:123456789012:finding/guardduty-01",
+      "Title": "GuardDuty should be enabled",
+      "Description": "Checks threat detection coverage.",
+      "Severity": {"Label": "HIGH"},
+      "Resources": [{"Id": "arn:aws:guardduty:us-east-1:123456789012:detector/abc", "Type": "AwsGuardDutyDetector"}],
+      "Compliance": {
+        "Status": "PASSED",
+        "SecurityControlId": "GuardDuty.1",
+        "RelatedRequirements": ["NIST.800-171.r2 3.14.6"]
+      }
+    },
+    {
+      "Id": "arn:aws:securityhub:us-east-1:123456789012:finding/config-01",
+      "Title": "AWS Config should be enabled",
+      "Description": "Checks configuration recording coverage.",
+      "Severity": {"Label": "MEDIUM"},
+      "Resources": [{"Id": "123456789012", "Type": "AwsAccount"}],
+      "Compliance": {
+        "Status": "WARNING",
+        "SecurityControlId": "Config.1",
+        "RelatedRequirements": ["NIST.800-171.r2 3.4.1"]
+      }
+    }
+  ]
+}
