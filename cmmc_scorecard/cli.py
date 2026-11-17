@@ -42,7 +42,7 @@ def _score_style(score: float) -> str:
 
 
 def _bar(score: float, console: Console, width: int = 20) -> Text:
-    filled = int(round(score / 100.0 * width))
+    filled = round(score / 100.0 * width)
     style = _score_style(score)
     # Block glyphs render best, but legacy Windows consoles (cp1252) can't
     # encode them — fall back to ASCII there.
