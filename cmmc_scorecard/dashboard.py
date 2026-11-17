@@ -88,7 +88,7 @@ def radar_chart(scorecard: Scorecard) -> go.Figure:
             r=[80] * len(domains_loop),
             theta=domains_loop,
             mode="lines",
-            line=dict(color=GREEN, width=1, dash="dot"),
+            line={"color": GREEN, "width": 1, "dash": "dot"},
             name="Target (80)",
             hoverinfo="skip",
         )
@@ -99,22 +99,22 @@ def radar_chart(scorecard: Scorecard) -> go.Figure:
             theta=domains_loop,
             fill="toself",
             fillcolor="rgba(34,211,238,0.25)",
-            line=dict(color=ACCENT, width=2),
+            line={"color": ACCENT, "width": 2},
             name="Coverage",
             hovertemplate="%{theta}: %{r:.0f}/100<extra></extra>",
         )
     )
     fig.update_layout(
-        polar=dict(
-            bgcolor=PANEL,
-            radialaxis=dict(visible=True, range=[0, 100], gridcolor="#1e293b", tickfont=dict(color=DIM)),
-            angularaxis=dict(gridcolor="#1e293b", tickfont=dict(color="#cbd5e1", size=12)),
-        ),
+        polar={
+            "bgcolor": PANEL,
+            "radialaxis": {"visible": True, "range": [0, 100], "gridcolor": "#1e293b", "tickfont": {"color": DIM}},
+            "angularaxis": {"gridcolor": "#1e293b", "tickfont": {"color": "#cbd5e1", "size": 12}},
+        },
         paper_bgcolor="rgba(0,0,0,0)",
-        font=dict(color="#e2e8f0"),
+        font={"color": "#e2e8f0"},
         showlegend=True,
-        legend=dict(orientation="h", y=-0.08),
-        margin=dict(l=40, r=40, t=30, b=40),
+        legend={"orientation": "h", "y": -0.08},
+        margin={"l": 40, "r": 40, "t": 30, "b": 40},
         height=460,
     )
     return fig
@@ -129,18 +129,18 @@ def domain_bar(scorecard: Scorecard) -> go.Figure:
             x=scores,
             y=domains,
             orientation="h",
-            marker=dict(color=colors),
+            marker={"color": colors},
             hovertemplate="%{y}: %{x:.0f}/100<extra></extra>",
         )
     )
-    fig.add_vline(x=80, line=dict(color=GREEN, width=1, dash="dot"))
+    fig.add_vline(x=80, line={"color": GREEN, "width": 1, "dash": "dot"})
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor=PANEL,
-        font=dict(color="#e2e8f0"),
-        xaxis=dict(range=[0, 100], gridcolor="#1e293b"),
-        yaxis=dict(autorange="reversed"),
-        margin=dict(l=10, r=10, t=10, b=10),
+        font={"color": "#e2e8f0"},
+        xaxis={"range": [0, 100], "gridcolor": "#1e293b"},
+        yaxis={"autorange": "reversed"},
+        margin={"l": 10, "r": 10, "t": 10, "b": 10},
         height=460,
     )
     return fig

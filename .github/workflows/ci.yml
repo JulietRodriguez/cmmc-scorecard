@@ -50,6 +50,6 @@ jobs:
           python-version: "3.12"
           cache: pip
       - name: Install ruff
-        run: pip install ruff
+        run: pip install "ruff==0.16.9"
       - name: Ruff check
         run: ruff check cmmc_scorecard tests

@@ -2,7 +2,7 @@
 
 > Turn raw security findings into a CMMC 2.0 Level 2 compliance scorecard — domain-by-domain ratings, gap analysis, remediation priorities, and OSCAL Assessment Results.
 
-[![CI](https://github.com/your-org/cmmc-scorecard/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/cmmc-scorecard/actions/workflows/ci.yml)
+[![CI](https://github.com/JulietRodriguez/cmmc-scorecard/actions/workflows/ci.yml/badge.svg)](https://github.com/JulietRodriguez/cmmc-scorecard/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![CMMC 2.0](https://img.shields.io/badge/CMMC-2.0%20Level%202-0b3d91.svg)](https://dodcio.defense.gov/CMMC/)

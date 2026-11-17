@@ -17,11 +17,11 @@ from cmmc_scorecard.models import (
 )
 
 __all__ = [
-    "__version__",
-    "Finding",
     "ControlResult",
     "DomainScore",
+    "Finding",
     "Gap",
     "RemediationItem",
     "Scorecard",
+    "__version__",
 ]

@@ -9,7 +9,7 @@ description = "Generate CMMC 2.0 Level 2 compliance scorecards, gap analysis, an
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "cmmc-scorecard contributors" }]
+authors = [{ name = "Juliet Rodriguez" }]
 keywords = ["cmmc", "nist-800-171", "compliance", "oscal", "security", "prowler", "security-hub"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -37,8 +37,8 @@ dev = [
 cmmc-scorecard = "cmmc_scorecard.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/your-org/cmmc-scorecard"
-Issues = "https://github.com/your-org/cmmc-scorecard/issues"
+Homepage = "https://github.com/JulietRodriguez/cmmc-scorecard"
+Issues = "https://github.com/JulietRodriguez/cmmc-scorecard/issues"
 
 [tool.setuptools]
 packages = ["cmmc_scorecard"]
